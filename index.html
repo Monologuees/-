@@ -1,24 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的简历</title>
     <style>
-        body { font-family: Arial; margin: 40px; }
-        .card { max-width: 600px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px; }
-        h1 { color: #333; }
-        .btn { display: inline-block; background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            background-color: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .info-item {
+            margin-bottom: 8px;
+            padding: 0 15px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .content {
+            padding: 0 15px;
+            margin-bottom: 10px;
+        }
+        
+        .photo {
+            width: 120px;
+            height: 150px;
+            background-color: #eee;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>张三</h1>
-        <p><strong>昵称：</strong>小张</p>
-        <p><strong>性别：</strong>男</p>
-        <p><strong>邮箱：</strong>zhangsan@qq.com</p>
-        <p><strong>爱好：</strong>旅游、摄影、运动</p>
-        <p><strong>个人简介：</strong>热爱编程，积极向上</p>
-        <a href="form.html" class="btn">注册表单 →</a>
+    <div class="resume-container">
+        
+        <!-- 姓名标题 -->
+        <div class="header">
+            <div class="name">冯仕杰</div>
+        </div>
+        
+        <!-- 照片区域 -->
+        <div style="text-align: center;">
+            <img src="a5c051a3f4b84674bdf25597bdffd1c7.jpg" alt="个人头像" class="avatar">
+        </div>
+        
+        <!-- 基本信息 -->
+        <div class="section">
+            <div class="section-title">基本信息</div>
+            <div class="info-item">
+                <span class="info-label">性别：</span>男
+            </div>
+            <div class="info-item">
+                <span class="info-label">电话：</span>13764401998
+            </div>
+            <div class="info-item">
+                <span class="info-label">邮箱：</span>fengshijie1234556@163.com
+            </div>
+            <div class="info-item">
+                <span class="info-label">生日：</span>2005.12.21
+            </div>
+        </div>
+        
+        <!-- 教育背景 -->
+        <div class="section">
+            <div class="section-title">教育背景</div>
+            <table>
+                <tr>
+                    <th>时间</th>
+                    <th>学校</th>
+                    <th>专业</th>
+                </tr>
+                <tr>
+                    <td>2024.9.1-2028.6.30</td>
+                    <td><a href="https://www.suibe.edu.cn" target="_blank" class="school-link" title="点击访问上海对外经贸大学官网">
+                            上海对外经贸大学</td>
+                    <td>人工智能</td>
+                </tr>
+                <tr>
+                    <td>2021.9.1-2024.6.30</td>
+                    <td><a href="https://www.hlkg.pudong-edu.sh.cn" target="_blank" class="school-link" title="点击访问华理科高官网">
+                            华理科高</td>
+                    <td>高中</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- 工作经验 -->
+        <div class="section">
+            <div class="section-title">阅读书目</div>
+            <div class="content">
+                1. 红楼梦<br>
+                2. 绿楼梦<br>
+                3. 黄楼梦
+            </div>
+        </div>
+        
+        <!-- 技能特长 -->
+        <div class="section">
+            <div class="section-title">技能特长</div>
+            <div class="content">
+                • 游泳<br>
+                • 睡觉<br>
+                • 锻炼
+            </div>
+        </div>
+        
+        <!-- 自我介绍 -->
+        <div class="section">
+            <div class="section-title">自我介绍</div>
+            <div class="content">
+                这个人很懒没什么好看的
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
