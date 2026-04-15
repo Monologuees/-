@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>505寝室 · 我们🐱大自己的宛平南路600号</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef9f0;   /* 暖色调基底，更有寝室温馨感 */
+            color: #2c3e2f;
+            line-height: 1.5;
+        }
+
+        :root {
+            --primary-color: #b86f2c;      /* 暖木色主调，寝室温暖感 */
+            --primary-dark: #9b4e1a;
+            --primary-light: #fff3e6;
+            --accent-color: #e68a2e;       /* 活泼橙色 */
+            --gray-bg: #fffaf5;
+            --border-color: #ffe0c0;
+            --text-dark: #2d3e2b;
+            --text-muted: #6b4c3b;
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 顶部导航栏 (保留框架，内容变寝室特色) */
+        .top-bar {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 12px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 寝室英雄区 (Hero) */
+        .hero-section {
+            background: linear-gradient(135deg, #f3d9b1 0%, #e7bc8e 100%);
+            color: #3b2a1f;
+            padding: 50px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 0 rgba(255,255,200,0.5);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            max-width: 550px;
+        }
+
+        .hero-btn {
+            background-color: var(--accent-color);
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero-btn:hover {
+            background-color: #c55a1c;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+            background: rgba(255,245,220,0.7);
+            padding: 20px;
+            border-radius: 48px;
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-image i {
+            font-size: 130px;
+            color: #9b4e1a;
+        }
+
+        /* 寝室特色卡片 */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+            color: #9b4e1a;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: #ffcf9a;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* 寝室成员展示区 (替代新闻模块) */
+        .members-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin: 50px 0;
+        }
+        .member-card {
+            background: white;
+            border-radius: 32px;
+            padding: 24px 18px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        .member-avatar {
+            font-size: 68px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+        .member-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .member-tag {
+            background: #fff0e0;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b86f2c;
+            margin-bottom: 12px;
+        }
+        .member-bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 寝室日常 & 趣事板块（替代新闻公告） */
+        .daily-events {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 40px 0;
+        }
+        .info-panel {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid #ffe0bf;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+        .panel-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #9b4e1a;
+        }
+        .news-list {
+            list-style: none;
+        }
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px dashed #f0dbc8;
+        }
+        .news-title {
+            font-weight: 500;
+        }
+        .news-date {
+            font-size: 0.75rem;
+            background: #faf0e6;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: #a45d2e;
+        }
+
+        /* 寝室荣誉墙 */
+        .honor-section {
+            background: #fff6ed;
+            border-radius: 36px;
+            padding: 44px 24px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .honor-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 28px;
+        }
+        .honor-item {
+            background: white;
+            border-radius: 60px;
+            padding: 12px 28px;
+            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .honor-item i {
+            margin-right: 8px;
+            color: #f4b942;
+        }
+
+        /* 底部footer */
+        footer {
+            background-color: #2d2418;
+            color: #e2cfb5;
+            padding: 48px 0 24px;
+            margin-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #f8e2b0;
+            margin-bottom: 20px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #4a3724;
+            font-size: 0.8rem;
+        }
+
+        /* 自定义编辑提醒 */
+        .custom-note {
+            background: #ffe6d5;
+            border-radius: 30px;
+            padding: 6px 15px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 12px; }
+            .hero-text h2 { font-size: 1.8rem; }
+            .daily-events { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo-area">
+                <i class="fas fa-bed logo-icon"></i>
+                <div class="logo-text">
+                    <h1 id="room-name">🏠 505 幸福小窝</h1>
+                    <p id="room-slogan">· 同寝同心 · 温暖前行 ·</p>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#">🏡 寝室首页</a>
+                <a href="#">👥 神仙绝绝子室友</a>
+                <a href="#">📸 日常碎片</a>
+                <a href="#">🏆 荣誉墙</a>
+                <a href="#">🎮 寝室文化</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 寝室主题 Hero -->
+<section class="hero-section">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h2 id="hero-heading">505寝室 · 文汇路600号也算是600号！</h2>
+            <p id="hero-desc">四张书桌，四种梦想，同一盏深夜的灯。</p>
+            <a href="#" class="hero-btn" id="hero-btn-text">🚪 参观寝室 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-door-open"></i>
+            <p style="margin-top: 10px; font-weight:500;">✨ 门牌号: 505 · 专家门诊 ✨</p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- 寝室特色卡片：氛围标签 -->
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 class="section-title">✨ 505 专家门诊</h2>
+        <span class="custom-note"><i class="fas fa-magic"></i> 双击文字即可自定义</span>
+    </div>
+    <div class="cards-grid">
+        <div class="service-card">
+            <i class="fas fa-mug-hot card-icon"></i>
+            <h3>深夜茶话会</h3>
+            <p>每周卧谈会</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-laptop-code card-icon"></i>
+            <h3>期末大讲堂</h3>
+            <p>共享笔记 · 名师面对面</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-birthday-cake card-icon"></i>
+            <h3>周三团建</h3>
+            <p>神秘金宾棒畅饮</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-dumbbell card-icon"></i>
+            <h3>运动搭子</h3>
+            <p>夜跑小分队 & 海底小纵队</p>
+        </div>
+    </div>
+
+    <!-- 寝室成员介绍  (超有爱) -->
+    <h2 class="section-title">👋 我们的「最佳室友」</h2>
+    <div class="members-section" id="members-container">
+        <div class="member-card">
+            <div class="member-avatar"><i class="fas fa-crown"></i></div>
+            <div class="member-name">老王</div>
+            <div class="member-tag">寝室长 </div>
+            <div class="member-bio">擅长街霸、pornhub制作、爱好是在游泳池里憋气2h、杀戮尖塔2大神，最尊重老汪的人</div>
+        </div>
+        <div class="member-card">
+            <div class="member-avatar"><i class="fas fa-brain"></i></div>
+            <div class="member-name">吴桑桑</div>
+            <div class="member-tag">民乐团副团长</div>
+            <div class="member-bio">擅长吹笛子、第五人格糕手、杀戮尖塔2大神、志愿者成瘾者</div>
+        </div>
+        <div class="member-card">
+            <div class="member-avatar"><i class="fas fa-music"></i></div>
+            <div class="member-name">马土木</div>
+            <div class="member-tag">土木工程得奖者</div>
+            <div class="member-bio">每晚最晚上床最早睡觉、替身是ldh，另一个替身是fjj，代号Atlas</div>
+        </div>
+        <div class="member-card">
+            <div class="member-avatar"><i class="fas fa-camera"></i></div>
+            <div class="member-name">老汪</div>
+            <div class="member-tag">出生担当</div>
+            <div class="member-bio">北极熊般的体感、e68消灭者、养活超级鸡车者、APEX大神、法国时区生物钟拥有者</div>
+        </div>
+    </div>
+
+    <!-- 日常趣事 + 寝室大事件 (仿新闻公告结构) -->
+    <div class="daily-events">
+        <div class="info-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-calendar-alt"></i> 📅 505 日常碎片</h3>
+                <span class="more-link" style="cursor:default;">✨ 新鲜事</span>
+            </div>
+            <ul class="news-list" id="daily-list">
+                <li class="news-item"><span class="news-title">🍲 庆祝英语四、六级全寝通过！</span><span class="news-date">04/12</span></li>
+                <li class="news-item"><span class="news-title">🎮 寝室期末突击大获全胜</span><span class="news-date">04/09</span></li>
+                <li class="news-item"><span class="news-title">📖 这里没有人玩米家游戏！</span><span class="news-date">04/05</span></li>
+                <li class="news-item"><span class="news-title">🌸 我们有两个过了进阶10的！</span><span class="news-date">04/01</span></li>
+            </ul>
+        </div>
+        <div class="info-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-party-horn"></i> 🎉 寝室大事记</h3>
+                <span class="more-link" style="cursor:default;">🏆 高光时刻</span>
+            </div>
+            <ul class="news-list" id="event-list">
+                <li class="news-item"><span class="news-title">🥇 爱党爱国，党员寝室</span><span class="news-date">2025.03</span></li>
+                <li class="news-item"><span class="news-title">🏅 热爱学习，薅你🐱奖学金羊毛</span><span class="news-date">2025.01</span></li>
+                <li class="news-item"><span class="news-title">🎬 联合506打造双倍4人帮</span><span class="news-date">2024.12</span></li>
+                <li class="news-item"><span class="news-title">🚴 </span><span class="news-date">2024.10</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 寝室荣誉榜 (奖状墙) -->
+    <div class="honor-section">
+        <h2 style="color:#9b4e1a;"><i class="fas fa-trophy"></i> 505荣誉墙</h2>
+        <div class="honor-grid">
+            <div class="honor-item"><i class="fas fa-medal"></i> wfs贡献了我们厅的冰箱！</div>
+            <div class="honor-item"><i class="fas fa-chart-line"></i> 友爱互助、从未发生世界大战</div>
+            <div class="honor-item"><i class="fas fa-hand-peace"></i> 神秘志愿时长累计100+h</div>
+            <div class="honor-item"><i class="fas fa-microphone-alt"></i> 校园十佳歌手的隔壁寝室</div>
+        </div>
+        <p style="margin-top: 28px; font-size:0.9rem;">✨ 我们不是普通室友，是胖友！ ✨</p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🚪 505 寝室公约</h4>
+                <ul>
+                    <li>🔇 凌晨3点后轻音模式</li>
+                    <li>🧹 一尘不染</li>
+                    <li>🤭 互相尊重！爱党爱国！</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>📸 寝室日常</h4>
+                <ul>
+                    <li>微信：英语角没有胖友文汇路片甲不留群内反馈</li>
+                    <li>#寝室改造 #学习搭子</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>💬 联系我们</h4>
+                <ul>
+                    <li>📍 校区35号楼505室</li>
+                    <li>📞 联系方式：英语角没有胖友文汇路片甲不留群内反馈 </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>❤️ 特别鸣谢</h4>
+                <ul>
+                    <li>宿管阿姨对违规电器的故意装作没看到</li>
+                    <li>隔壁帮我签到的fjj</li>
+                    <li>每一位来串门的朋友（504三位除外）</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>🏠 505寝室 ✨ 我们的青春</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 赋予整个页面双击任意文字直接编辑的功能 (极大自定义)
+    const editableElements = document.querySelectorAll('h1, h2, h3, p, .news-title, .member-name, .member-bio, .member-tag, .service-card p, .service-card h3, .hero-text p, .hero-text h2, .logo-text p, .footer-col li, .honor-item');
+    editableElements.forEach(el => {
+        if (!el.getAttribute('data-editable')) {
+            el.setAttribute('contenteditable', 'true');
+            el.setAttribute('data-editable', 'true');
+            el.style.cursor = 'text';
+            el.style.outline = 'none';
+            el.addEventListener('focus', function() { this.style.backgroundColor = '#fff2e0'; this.style.transition = '0.1s'; });
+            el.addEventListener('blur', function() { this.style.backgroundColor = ''; });
+            el.setAttribute('title', '✏️ 双击或点击即可编辑内容');
+        }
+    });
+
+    // 额外添加logo区域和按钮文字也可以编辑，更加自由
+    const heroBtn = document.getElementById('hero-btn-text');
+    if(heroBtn) {
+        heroBtn.setAttribute('contenteditable', 'true');
+        heroBtn.style.cursor = 'text';
+        heroBtn.setAttribute('title', '编辑按钮文字');
+    }
+    const roomName = document.getElementById('room-name');
+    if(roomName) roomName.setAttribute('contenteditable', 'true');
+    const roomSlogan = document.getElementById('room-slogan');
+    if(roomSlogan) roomSlogan.setAttribute('contenteditable', 'true');
+    const heroHeading = document.getElementById('hero-heading');
+    if(heroHeading) heroHeading.setAttribute('contenteditable', 'true');
+    const heroDesc = document.getElementById('hero-desc');
+    if(heroDesc) heroDesc.setAttribute('contenteditable', 'true');
+
+    // 简单添加控制台提示，让访问者明白所有内容皆可自定义
+    console.log("%c✨ 505寝室专属网页✨ 所有文本均可双击修改！打造你们独一无二的寝室主页。", "color: #b86f2c; font-size: 16px");
+    // 增加动态欢迎语 (可选)
+    const hour = new Date().getHours();
+    let greeting = "";
+    if(hour < 12) greeting = "早上好🌞 505的小窝等你来编辑~";
+    else if(hour < 18) greeting = "下午好📚 室友们都在大睡特睡吧！";
+    else greeting = "晚上好🌙 夜聊时间到！双击修改你的寝室故事。";
+    const smallNote = document.createElement('div');
+    smallNote.style.position = 'fixed';
+    smallNote.style.bottom = '15px';
+    smallNote.style.left = '15px';
+    smallNote.style.backgroundColor = '#2d2418';
+    smallNote.style.color = '#ffd7a5';
+    smallNote.style.padding = '6px 14px';
+    smallNote.style.borderRadius = '40px';
+    smallNote.style.fontSize = '0.7rem';
+    smallNote.style.zIndex = '999';
+    smallNote.style.fontWeight = '500';
+    smallNote.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+    smallNote.innerHTML = `💡 ${greeting}  ✨ 双击任意文字改内容`;
+    document.body.appendChild(smallNote);
+    // 可自定义重置演示？为了保持简洁，默认所有内容都可以自由编辑且保存到本地localStorage？可额外轻提醒
+    // 增加一个简单的保存提醒：编辑后实时变化，无需后端
+    // 不做复杂存储，保证用户可随意修改文本内容
+</script>
+</body>
+</html>
